@@ -6,10 +6,7 @@ export default function App({ Component, pageProps }) {
   <Component 
   {...pageProps}
   />
-  <footer>
-      <p>@2023 Bishalk thyapa</p>
-      <p> Striclty legimate qnaltity</p>
-  </footer>
+
   </>
   )
 }
