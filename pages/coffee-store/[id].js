@@ -3,7 +3,6 @@ import { useRouter } from 'next/router'
 import Link  from 'next/link'
 const CoffeeStore = () => {
     const router = useRouter()
-    console.log(router)
   return (
     <>
     <div>
@@ -12,6 +11,9 @@ const CoffeeStore = () => {
         Back to home
     </Link>
     <h1> data : {router.query.id}</h1>
+    <Link href='/coffee-store/dynamic'>
+        Go to dyna,oc [age]
+    </Link>
     </div>
     </>
   )
