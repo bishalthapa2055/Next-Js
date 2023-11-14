@@ -5,6 +5,7 @@
     align-items:  center;
     height: calc(100vh - 0rem);
     display: grid;
+    grid-template-columns: repeat(2 , 1fr);
     place-items: center;
     padding: 0;
     margin: 0;
@@ -50,4 +51,12 @@ padding-top: 1rem;
     font-size: 1rem;
     border-radius: 20px;
 
+}
+
+
+
+
+.banner__image{
+    border-radius: 100px;
+    border: 10px solid teal;
 }
