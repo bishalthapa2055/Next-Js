@@ -4,10 +4,24 @@ import { Inter } from 'next/font/google'
 import styles from '@/styles/Home.module.css'
 import Banner from '@/components/banner'
 import Card from '@/components/card'
+import data from "../data/coffee-store.json"
+
 
 const inter = Inter({ subsets: ['latin'] })
 
-export default function Home() {
+
+
+export async function getStaticProps(context){
+  return{
+      props :{
+          data,
+      }, 
+  }
+}
+
+
+export default function Home(props) {
+  console.log(props)
   return (
     <>
       <Head>
