@@ -1,0 +1,50 @@
+[
+    {
+        "id" :0 ,
+        "name" :"StrangestLove Coffee",
+        "img" :"/static/hero_image.png",
+        "websiteUrl":"https://www.google.com",
+        "address" :"Changathali 7 lalitpur",
+        "neighbourhood":"at and a kind spadian"
+    },
+    {
+        "id" :1,
+        "name" :"Himalayan Coffee",
+        "img" :"/static/hero_image.png",
+        "websiteUrl":"https://www.google.com",
+        "address" :"Changathali 7 lalitpur",
+        "neighbourhood":"at and a kind spadian"
+    },
+    {
+        "id" :2 ,
+        "name" :"Kumari java Coffee",
+        "img" :"/static/hero_image.png",
+        "websiteUrl":"https://www.google.com",
+        "address" :"Changathali 7 lalitpur",
+        "neighbourhood":"at and a kind spadian"
+    },
+    {
+        "id" :3 ,
+        "name" :"zButterbox Coffee",
+        "img" :"/static/hero_image.png",
+        "websiteUrl":"https://www.google.com",
+        "address" :"Changathali 7 lalitpur",
+        "neighbourhood":"at and a kind spadian"
+    },
+    {
+        "id" :4 ,
+        "name" :"lagankhel Coffee",
+        "img" :"/static/hero_image.png",
+        "websiteUrl":"https://www.google.com",
+        "address" :"Changathali 7 lalitpur",
+        "neighbourhood":"at and a kind spadian"
+    },
+    {
+        "id" :5 ,
+        "name" :"Kathamandu Coffee",
+        "img" :"/static/hero_image.png",
+        "websiteUrl":"https://www.google.com",
+        "address" :"Changathali 7 lalitpur",
+        "neighbourhood":"at and a kind spadian"
+    }
+]
