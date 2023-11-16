@@ -21,7 +21,9 @@ export default function Home() {
 
       <Banner />
       
-      <Card name="Bishal Coffee " href ="/coffee-store/bishal" img ="/static/hero_image.png"/>
+
+      <Card/>
+      
       </div>
       </main>
     </>
