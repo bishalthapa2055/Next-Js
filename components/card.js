@@ -4,6 +4,15 @@ import React from 'react';
 import styles from './card.module.css';
 import data from "../data/coffee-store.json"
 
+
+export async function getStaticProps(context){
+    return{
+        props :{
+            data,
+        }, 
+    }
+}
+
 const Card = () => {
   return (
 
