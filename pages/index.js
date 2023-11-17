@@ -21,7 +21,7 @@ export async function getStaticProps(context){
 
 
 export default function Home(props) {
-  console.log(props)
+  // console.log(props.data)
   return (
     <>
       <Head>
@@ -35,8 +35,13 @@ export default function Home(props) {
 
       <Banner />
       
-
-      <Card/>
+      {
+      props.data.length > 0 && (
+        <>
+        <Card data = {props}/>
+        </> 
+      )
+      }
       
       </div>
       </main>

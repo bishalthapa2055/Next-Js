@@ -2,18 +2,13 @@ import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
 import styles from './card.module.css';
-import data from "../data/coffee-store.json"
+// import data from "../data/coffee-store.json"
 
 
-export async function getStaticProps(context){
-    return{
-        props :{
-            data,
-        }, 
-    }
-}
 
-const Card = () => {
+
+const Card = ({data}) => {
+    console.log(data.data)
   return (
 
     <>
@@ -22,11 +17,11 @@ const Card = () => {
 
             <div className={styles.grid__container} >
 
-            {data.map((item) =>{
+            {data.data.map((item) =>{
                 return (
                     
                     <>
-                    <Link href={`coffee-store/${item.id}`} >
+                    <Link href={`coffee-store/${item.id}`} key={item.id}>
 
                     <div className={styles.card__container}>
                 <div className={styles.card__header}>
