@@ -1,0 +1,65 @@
+.main__container{
+    margin-top: 2rem;
+    background: transparent;
+}
+
+.image__container {
+    background: #000;
+    height: 500px;
+    width: 100%; /* Ensure the width covers the container */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 1rem;
+}
+  .image__addition {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* or object-fit: fill; */
+    border-radius: 1rem;
+  }
+
+.two__container{
+    display: grid;
+    grid-template-columns:  1fr 1fr;
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+.image__description{
+    border-radius: 2.5rem;
+    background: rgba( 255, 255, 255, 0.7 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 4px );
+    -webkit-backdrop-filter: blur( 4px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    width: 100%;
+    height: 75%;
+}
+.image__content{
+    padding : 1.5rem 1.5rem;
+}
+
+.vote__button {
+    margin-top: 20px;
+    width: 30%;
+    height: 40px;
+    background-color: rgb(160, 160, 160);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.button{
+    width: 100%;
+    height: fit-content;
+    background-color:rgb(160, 160, 160);
+    color:  rgb(255, 255, 255);
+    font-size: 1.5rem;
+}
+ 
+.button:hover{
+    cursor: pointer;
+    
+}
