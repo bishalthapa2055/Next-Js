@@ -8,7 +8,7 @@ import styles from './card.module.css';
 
 
 const Card = ({data}) => {
-    console.log(data.data)
+    // console.log(data.data)
   return (
 
     <>
