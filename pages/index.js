@@ -5,6 +5,7 @@ import styles from '@/styles/Home.module.css'
 import Banner from '@/components/banner'
 import Card from '@/components/card'
 import data from "../data/coffee-store.json"
+import nextConfig from '@/next.config'
 
 
 const inter = Inter({ subsets: ['latin'] })
@@ -22,7 +23,7 @@ export  async function getStaticProps(){
     },
   };
 
-  const data = (await fetch("https://jsonplaceholder.typicode.com/users" , options));
+  const data = await fetch("https://jsonplaceholder.typicode.com/users" , options);
 
   const newData = await data.json()
 
@@ -52,6 +53,7 @@ export  async function getStaticProps(){
 
 export default function Home(props) {
   // console.log(props.data)
+  console.log(nextConfig.env)
   return (
     <>
       <Head>
