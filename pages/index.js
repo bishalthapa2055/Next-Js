@@ -11,12 +11,42 @@ const inter = Inter({ subsets: ['latin'] })
 
 
 
-export async function getStaticProps(context){
-  return{
-      props :{
-          data,
-      }, 
+export  async function getStaticProps(){
+  // first to get the param id 
+
+  const options = {
+    method: "GET",
+    headers: {
+      Accept: "application/json", // Fix the typo here
+      // Authorization 
+    },
+  };
+
+  const data = (await fetch("https://jsonplaceholder.typicode.com/users" , options));
+
+  const newData = await data.json()
+
+ 
+
+  //learning way to find and send the derired id 
+  // return{
+  //   props :{
+  //     coffeeStore : CoffeeStoreData.find((coffeeStore) =>{
+  //       return coffeeStore.id.toString( ) ===  params.id// dynamic id 
+  //     })
+
+  //   }
+  // }
+
+  // but incase  of api calls 
+
+   return{
+    props :{
+      coffeeStore :  newData,
+    }
   }
+
+
 }
 
 
@@ -36,9 +66,9 @@ export default function Home(props) {
       <Banner />
       
       {
-      props.data.length > 0 && (
+      props.coffeeStore.length > 0 && (
         <>
-        <Card data = {props}/>
+        <Card coffeeStore = {props}/>
         </> 
       )
       }

@@ -7,8 +7,8 @@ import styles from './card.module.css';
 
 
 
-const Card = ({data}) => {
-    // console.log(data.data)
+const Card = ({coffeeStore}) => {
+    // console.log(coffeeStore)
   return (
 
     <>
@@ -17,7 +17,7 @@ const Card = ({data}) => {
 
             <div className={styles.grid__container} >
 
-            {data.data.map((item) =>{
+            {coffeeStore.coffeeStore.map((item) =>{
                 return (
                     
                     <>
@@ -28,7 +28,7 @@ const Card = ({data}) => {
                     <h2>{item.name}</h2>
                 </div>
                 <div className={styles.card__image__container}>
-                    <Image src="/static/hero_image.png" width={260} height={160} alt='hero'  className={styles.image}/>
+                    <Image src="https://images.unsplash.com/photo-1625595234473-c00c86c73353?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fHBvdHJhaXR8ZW58MHx8MHx8fDA%3D" width={260} height={160} alt='hero'  className={styles.image}/>
                 </div>
                 </div>
              </Link>
