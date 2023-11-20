@@ -5,6 +5,8 @@ import styles from '@/styles/Home.module.css'
 import Banner from '@/components/banner'
 import Card from '@/components/card'
 import data from "../data/coffee-store.json"
+import nextConfig from '@/next.config'
+import getAllUsers from '@/lib/coffee-store'
 
 
 const inter = Inter({ subsets: ['latin'] })
@@ -14,17 +16,11 @@ const inter = Inter({ subsets: ['latin'] })
 export  async function getStaticProps(){
   // first to get the param id 
 
-  const options = {
-    method: "GET",
-    headers: {
-      Accept: "application/json", // Fix the typo here
-      // Authorization 
-    },
-  };
 
-  const data = (await fetch("https://jsonplaceholder.typicode.com/users" , options));
 
-  const newData = await data.json()
+  //get the lists of data from lib folder
+
+  const newData = await getAllUsers();
 
  
 
@@ -42,7 +38,13 @@ export  async function getStaticProps(){
 
    return{
     props :{
+
+      // in case  of different varables 
+
       coffeeStore :  newData,
+      //or in case of single data can use own dataname like 
+
+      // coffeeStore
     }
   }
 
@@ -52,6 +54,7 @@ export  async function getStaticProps(){
 
 export default function Home(props) {
   // console.log(props.data)
+  console.log(nextConfig.env)
   return (
     <>
       <Head>
