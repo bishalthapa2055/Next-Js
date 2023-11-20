@@ -4,22 +4,15 @@ import Link  from 'next/link'
 import CoffeeStoreData from "../../data/coffee-store.json"
 import styles from "../../styles/Coffee-store.module.css"
 import Image from 'next/image'
+import getAllUsers from '@/lib/coffee-store'
 
 export  async function getStaticProps({params}){
   // first to get the param id 
 
-  console.log(params , "params")
-  const options = {
-    method: "GET",
-    headers: {
-      Accept: "application/json", // Fix the typo here
-      // Authorization 
-    },
-  };
+  
 
-  const data = await fetch("https://jsonplaceholder.typicode.com/users" , options);
-
-  const newData = await data.json()
+  //api  calls from the lib
+  const coffeeStores = await getAllUsers()
 
  
 
@@ -37,7 +30,7 @@ export  async function getStaticProps({params}){
 
    return{
     props :{
-      coffeeStore :  newData.find((store) =>{
+      coffeeStore :  coffeeStores.find((store) =>{
         return store.id.toString() === params.id
       }),
     }
@@ -63,18 +56,10 @@ export async function getStaticPaths () {
 
 
   // but incase of api calls 
-  const options = {
-    method: "GET",
-    headers: {
-      Accept: "application/json",
-      // Authorization 
-    },
-  };
+ 
+  const coffeeStores = await getAllUsers()
 
-  const data = await fetch("https://jsonplaceholder.typicode.com/users", options);
-  const newData = await data.json();
-
-  const paths = newData.map((user) => ({
+  const paths = coffeeStores.map((user) => ({
     params: {
       id: user.id.toString(),
     },
