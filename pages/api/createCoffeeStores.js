@@ -9,16 +9,36 @@ const table = base('coffee-stores');
 console.log(table)
 
 
-const createCoffeeStore = (req, res ) =>{
+const createCoffeeStore =  async(req, res ) =>{
 
    if(req.method === 'POST'){
+    
+    const findcoffeeStore = await table.select({
+        filterByFormula :` id= "0" ` 
+    }).firstPage()
+
+    console.log(findcoffeeStore)
+
+    if(findcoffeeStore){
+        res.json({
+            status : false ,
+            message : "Record alreaduy exists" ,
+            data : findcoffeeStore.map((item) => item.fields)
+        })
+    }
+    if(findcoffeeStore.length === 0){
+        res.json({
+            status : false ,
+            data : findcoffeeStore.map((item) => item.fields)
+        })
+    }
     res.json({
-        message :"post xa  hai"
+        message :"create a record",
     })
    }
    else{
     res.json({
-        message :"Others"
+        message :"Others Request"
     })
    }
 }
