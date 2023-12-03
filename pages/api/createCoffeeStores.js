@@ -11,29 +11,43 @@ console.log(table)
 
 const createCoffeeStore =  async(req, res ) =>{
 
+    const {id , name ,address , neighboourhood , votes , imageUrl} = req.body ;
+
    if(req.method === 'POST'){
     
     const findcoffeeStore = await table.select({
-        filterByFormula :` id= "0" ` 
+        filterByFormula :` id= ${id} ` 
     }).firstPage()
 
     console.log(findcoffeeStore)
 
-    if(findcoffeeStore){
-        res.json({
-            status : false ,
-            message : "Record alreaduy exists" ,
-            data : findcoffeeStore.map((item) => item.fields)
-        })
-    }
-    if(findcoffeeStore.length === 0){
+    
+    if(findcoffeeStore.length !== 0){
         res.json({
             status : false ,
             data : findcoffeeStore.map((item) => item.fields)
         })
     }
+    // crete the records 
+
+   const createTablle = await table.create([
+        {
+            fields :{
+                id :id ,
+                name :name,
+                address : address,
+                neighboourhood :neighboourhood,
+                votes :votes,
+                imageUrl  : imageUrl,
+            }
+        }
+    ])
+
+    console.log(createTablle)
     res.json({
-        message :"create a record",
+        status : true ,
+        message : "Recored created sucessfully ",
+        data : createTablle.map((item) =>item.fields)
     })
    }
    else{
